@@ -2,11 +2,15 @@ import styled from 'styled-components/native';
 import { colors, sizes } from '../../styles/global';
 
 export const Container = styled.View`
-  background-color: ${colors.background};
+  background-color: ${colors.highlight};
   padding: ${sizes.padding};
-  flex: 1;
-  justify-content: center;
+  height: 80%;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20%;
   align-items: center;
+  justify-content: center;
+  justify-self: flex-end;
 `;
 
 export const Label = styled.Text`

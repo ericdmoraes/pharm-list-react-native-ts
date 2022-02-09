@@ -1,9 +1,9 @@
 import React from 'react';
 // import 'react-native-gesture-handler';
-import {StatusBar} from 'react-native';
+import { StatusBar } from 'react-native';
 
 // Styles
-import {colors} from './styles/global';
+import { colors } from './styles/global';
 
 // Navigator
 import Routes from './routes';

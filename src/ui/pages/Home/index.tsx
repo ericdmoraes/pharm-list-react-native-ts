@@ -1,23 +1,21 @@
-import React from 'react';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState } from 'react';
+import { Pressable, Text } from 'react-native';
+import ClientModal from '../../components/ClientModal';
 
-import {Container, Label} from './styles';
-import {Button} from 'react-native';
+import { Container, Label } from './styles';
 
 const App: React.FC = () => {
-	const navigation = useNavigation();
+  const [visible, setVisible] = useState(false);
 
-	return (
-		<Container>
-			<Label>Bark to the moon, bro!</Label>
-			<Button
-				title="Back"
-				onPress={() => {
-					navigation.navigate('ModalScreen');
-				}}
-			/>
-		</Container>
-	);
+  return (
+    <Container>
+      <Label>Bark to the moon, bro!</Label>
+      <ClientModal close={setVisible} status={visible} />
+      <Pressable onPress={() => setVisible(!visible)}>
+        <Text>Press-me</Text>
+      </Pressable>
+    </Container>
+  );
 };
 
 export default App;

@@ -6,7 +6,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Screens
 import HomeScreen from '../pages/Home';
-import ClientModal from '../components/ClientModal';
 
 // Navigators
 const Stack = createNativeStackNavigator();
@@ -16,7 +15,6 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="ModalScreen" component={ClientModal} />
       </Stack.Navigator>
     </NavigationContainer>
   );

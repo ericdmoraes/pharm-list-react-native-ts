@@ -1,15 +1,24 @@
 import React from 'react';
-import { Button } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Modal, Pressable, Text, View } from 'react-native';
 
-import { Container, Label } from './styles';
+import { Label } from './styles';
 
-export default () => {
-  const navigation = useNavigation();
+export default ({ close, status }: { close: Function; status: boolean }) => {
   return (
-    <Container>
-      <Label>This is a modal!</Label>
-      <Button onPress={() => navigation.goBack()} title="Dismiss" />
-    </Container>
+    <Modal
+      animationType="slide"
+      transparent={false}
+      presentationStyle="overFullScreen"
+      visible={status}
+      onRequestClose={() => {
+        close(!status);
+      }}>
+      <View>
+        <Label>This is a modal!</Label>
+        <Pressable onPress={() => close(!status)}>
+          <Text>Close</Text>
+        </Pressable>
+      </View>
+    </Modal>
   );
 };
